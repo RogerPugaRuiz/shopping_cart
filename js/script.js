@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded',function(){
  * @author Roger Puga
  */
 
-
 /**
  * @description Function manage shopping list in cookie
  * @version 1.0
