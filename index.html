@@ -13,6 +13,8 @@
 </head>
 
 <body>
+    <div class="smoke-screen display-none">
+    </div>
     <header class="block-header">
         <div class="nav-header">
             <div class="ins">
@@ -22,89 +24,14 @@
                 <img class="img-shopping-cart" src="img/page/shopping-cart-vector-icon-isolated-260nw-1195100968.png" alt="shopping cart icon">
                 <div class="shopping-cart-list display-none">
                     <div class="shopping-cart-list-elements">
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5, CSS3, JavaScript para principiantes</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5, CSS3, JavaScript para principiantes</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5, CSS3, JavaScript para principiantes</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5, CSS3, JavaScript para principiantes</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5, CSS3, JavaScript para principiantes</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5, CSS3, JavaScript para principiantes</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5, CSS3, JavaScript para principiantes</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5, CSS3, JavaScript para principiantes</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
-                        <div class="shopping-cart-element">
-                            <h3 class="shopping-cart-element-title">HTML5, CSS3, JavaScript para principiantes</h3>
-                            <p class="shopping-cart-element-autor">Juan Pedro</p>
-
-                            <p class="shopping-cart-element-price">$15</p>
-                            <p class="shopping-cart-element-quantity">2</p>
-                            <input class="btn-delete-element" type="button" value="&#10006;">
-                        </div>
                     </div>
 
                     <div class="shopping-cart-total">
-                        Total: <span class="shopping-cart-total-value">$200</span>
+                        Total: <span class="shopping-cart-total-value">$0</span>
+                    </div>
+                    <div class="shopping-cart-control">
+                        <span class="shopping-cart-reset">Buidar Cistella</span>
+                        <span class="shopping-cart-confirmed">Comprar</span>
                     </div>
                 </div>
             </div>
@@ -140,109 +67,91 @@
             <div class="shop-items">
                 <div class="shop-item">
                     <img class="shop-item-image" src="img/pc.jpg">
-                    <span class="shop-item-title"><h3>HTML5,CSS3,JavaScript para principiantes</h3></span>
+                    <h3 class="shop-item-title">HTML5,CSS3,JavaScript para principiantes</h3>
                     <div class="shop-item-details">
-                        <div class="shop-autor">
-                            <p>Juan Pedro</p>
-                        </div>
+                        <p class="shop-autor">Juan Pedro</p>
                         <span class="shop-old-price">$200</span>
-                        <span class="shop-item-price">$15</span>
+                        <span class="shop-item-price">$<span class="shop-item-price-content">15</span></span>
                     </div>
                     <button class="btn btn-primary shop-item-button" type="button">AGREGAR AL CARRITO</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="img/comida.jpg">
-                    <span class="shop-item-title"><h3>Curso de Comida Vegetariana</h3></span>
+                    <h3 class="shop-item-title">Curso de Comida Vegetariana</h3>
                     <div class="shop-item-details">
-                        <div class="shop-autor">
-                            <p>Juan Pedro</p>
-                        </div>
+                        <p class="shop-autor">Juan Pedro</p>
                         <span class="shop-old-price">$200</span>
-                        <span class="shop-item-price">$15</span>
+                        <span class="shop-item-price">$<span class="shop-item-price-content">15</span></span>
                     </div>
                     <button class="btn btn-primary shop-item-button" type="button">AGREGAR AL CARRITO</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="img/guitar.jpg">
-                    <span class="shop-item-title"><h3>Guitarra para Principiantes</h3></span>
+                    <h3 class="shop-item-title">Guitarra para Principiantes</h3>
                     <div class="shop-item-details">
-                        <div class="shop-autor">
-                            <p>Juan Pedro</p>
-                        </div>
+                        <p class="shop-autor">Juan Pedro</p>
                         <span class="shop-old-price">$200</span>
-                        <span class="shop-item-price">$15</span>
+                        <span class="shop-item-price">$<span class="shop-item-price-content">15</span></span>
                     </div>
                     <button class="btn btn-primary shop-item-button" type="button">AGREGAR AL CARRITO</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="img/judo.jpg">
-                    <span class="shop-item-title"><h3>Técnicas de Judo básicas</h3></span>
+                    <h3 class="shop-item-title">Técnicas de Judo básicas</h3>
                     <div class="shop-item-details">
-                        <div class="shop-autor">
-                            <p>Roger Puga</p>
-                        </div>
+                        <p class="shop-autor">Roger Puga</p>
                         <span class="shop-old-price">$175</span>
-                        <span class="shop-item-price">$15</span>
+                        <span class="shop-item-price">$<span class="shop-item-price-content">15</span></span>
                     </div>
                     <button class="btn btn-primary shop-item-button" type="button">AGREGAR AL CARRITO</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="img/idiomas.jpg">
-                    <span class="shop-item-title"><h3>Curso de Idiomas</h3></span>
+                    <h3 class="shop-item-title">Curso de Idiomas</h3>
                     <div class="shop-item-details">
-                        <div class="shop-autor">
-                            <p>Roger Puga</p>
-                        </div>
+                        <p class="shop-autor">Roger Puga</p>
                         <span class="shop-old-price">$175</span>
-                        <span class="shop-item-price">$15</span>
+                        <span class="shop-item-price">$<span class="shop-item-price-content">15</span></span>
                     </div>
                     <button class="btn btn-primary shop-item-button" type="button">AGREGAR AL CARRITO</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="img/marketing.jpg">
-                    <span class="shop-item-title"><h3>Curso de Marketing Digital</h3></span>
+                    <h3 class="shop-item-title">Curso de Marketing Digital</h3>
                     <div class="shop-item-details">
-                        <div class="shop-autor">
-                            <p>Roger Puga</p>
-                        </div>
+                        <p class="shop-autor">Roger Puga</p>
                         <span class="shop-old-price">$175</span>
-                        <span class="shop-item-price">$15</span>
+                        <span class="shop-item-price">$<span class="shop-item-price-content">15</span></span>
                     </div>
                     <button class="btn btn-primary shop-item-button" type="button">AGREGAR AL CARRITO</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="img/fotografia.jpeg">
-                    <span class="shop-item-title"><h3>Curso de Fotografía</h3></span>
+                    <h3 class="shop-item-title">Curso de Fotografía</h3>
                     <div class="shop-item-details">
-                        <div class="shop-autor">
-                            <p>Albert Casany</p>
-                        </div>
+                        <p class="shop-autor">Albert Casany</p>
                         <span class="shop-old-price">$150</span>
-                        <span class="shop-item-price">$15</span>
+                        <span class="shop-item-price">$<span class="shop-item-price-content">15</span></span>
                     </div>
                     <button class="btn btn-primary shop-item-button" type="button">AGREGAR AL CARRITO</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="img/padel.jpg">
-                    <span class="shop-item-title"><h3>Padel para Principiantes</h3></span>
+                    <h3 class="shop-item-title">Padel para Principiantes</h3>
                     <div class="shop-item-details">
-                        <div class="shop-autor">
-                            <p>Albert Casany</p>
-                        </div>
+                        <p class="shop-autor">Albert Casany</p>
                         <span class="shop-old-price">$150</span>
-                        <span class="shop-item-price">$15</span>
+                        <span class="shop-item-price">$<span class="shop-item-price-content">15</span></span>
                     </div>
                     <button class="btn btn-primary shop-item-button" type="button">AGREGAR AL CARRITO</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="img/trader.jpg">
-                    <span class="shop-item-title"><h3>Curso de Trading para principiantes</h3></span>
+                    <h3 class="shop-item-title">Curso de Trading para principiantes</h3>
                     <div class="shop-item-details">
-                        <div class="shop-autor">
-                            <p>Albert Casany</p>
-                        </div>
+                        <p class="shop-autor">Albert Casany</p>
                         <span class="shop-old-price">$150</span>
-                        <span class="shop-item-price">$15</span>
+                        <span class="shop-item-price">$<span class="shop-item-price-content">15</span></span>
                     </div>
                     <button class="btn btn-primary shop-item-button" type="button">AGREGAR AL CARRITO</button>
                 </div>
