@@ -146,11 +146,15 @@ function createCart() {
 
         total += parseInt(element["quantity"]) * parseFloat(element["price"]);
     }
-    document.getElementsByClassName("counter-shopping-cart")[0].innerHTML = shopping_cart.length;
+    document.getElementsByClassName("counter-shopping-cart")[0].innerHTML = "$" + total;
     document.getElementsByClassName("shopping-cart-total-value")[0].innerHTML = "$" + total;
 }
 
-
+/**
+ * @description Event remove all list
+ * @version 1.0
+ * @author Albert Casany
+ */
 /**
  * @description Function manage shopping list in cookie
  * @version 1.0
