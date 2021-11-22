@@ -11,7 +11,7 @@ var shopping_cart = [];
 /**
  * @description Event put new item in shopping list
  * @version 1.0
- * @author Roger Puga
+ * @author Albert Casany
  */
 document.addEventListener('DOMContentLoaded', function() {
     // array of buttons
@@ -146,7 +146,7 @@ function createCart() {
 
         total += parseInt(element["quantity"]) * parseFloat(element["price"]);
     }
-
+    document.getElementsByClassName("counter-shopping-cart")[0].innerHTML = shopping_cart.length;
     document.getElementsByClassName("shopping-cart-total-value")[0].innerHTML = "$" + total;
 }
 
