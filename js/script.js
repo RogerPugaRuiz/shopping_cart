@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             createCart();
+            clearCart(element);
             console.log(shopping_cart);
         });
     }
@@ -155,6 +156,14 @@ function createCart() {
  * @version 1.0
  * @author Albert Casany
  */
+function clearCart(list_elements){
+    //document.getElementsByClassName("shopping-cart-reset");
+    //console.log("Hola yo",list_elements);
+    list_elements.remove()
+    
+}
+
+
 /**
  * @description Function manage shopping list in cookie
  * @version 1.0
