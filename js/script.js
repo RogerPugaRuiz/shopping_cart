@@ -6,7 +6,9 @@
 
 
 var shopping_cart = [];
-
+var openTimer = null;
+var closeTimer = null;
+var sens = 200;
 
 /**
  * @description Event put new item in shopping list
@@ -85,27 +87,37 @@ function deleteItem() {
 
 
 /**
- * @description Event show shopping list
+ * @description Events show shopping list
  * @version 1.0
  * @author Roger Puga
  */
 document.getElementsByClassName("shopping-cart")[0].addEventListener("mouseover", function(e) {
+
+    if (openTimer == null) {
+        openTimer = Date.now();
+        console.log("start = " + openTimer);
+    }
     let list = document.querySelectorAll(".shopping-cart-list")[0];
     list.classList.remove("display-none"); // show shopping cart
     document.getElementsByClassName("smoke-screen")[0].classList.remove("display-none");
     deleteItem();
 }, false);
 document.getElementsByClassName("shopping-cart")[0].addEventListener("mouseleave", function(e) {
-    console.log("leave");
+    console.log("end = " + closeTimer);
+    closeTimer = Date.now();
+    console.log("diff = " + (closeTimer - openTimer));
+
     setTimeout(function() {
-        let list = document.querySelectorAll(".shopping-cart-list")[0];
-        list.classList.add("display-none"); // close shopping cart
-        document.getElementsByClassName("smoke-screen")[0].classList.add("display-none");
+        if ((closeTimer - openTimer) > sens) {
+            let list = document.querySelectorAll(".shopping-cart-list")[0];
+            list.classList.add("display-none"); // close shopping cart
+            document.getElementsByClassName("smoke-screen")[0].classList.add("display-none");
+
+        }
+        openTimer = null;
     }, 500);
 
-
 }, false);
-
 
 
 function createCart() {
@@ -156,11 +168,10 @@ function createCart() {
  * @version 1.0
  * @author Albert Casany
  */
-function clearCart(list_elements){
+function clearCart(list_elements) {
     //document.getElementsByClassName("shopping-cart-reset");
     //console.log("Hola yo",list_elements);
     list_elements.remove()
-    
 }
 
 
@@ -171,7 +182,11 @@ function clearCart(list_elements){
  */
 
 /**
- * @description Function to accept shopping list
+ * @description Event to accept shopping list
  * @version 1.0
  * @author Roger Puga
  */
+
+document.getElementsByClassName("shopping-cart-confirmed")[0].addEventListener("click", function(e) {
+
+});
