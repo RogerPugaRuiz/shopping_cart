@@ -13,13 +13,13 @@ var shopping_cart = [];
  * @version 1.0
  * @author Albert Casany
  */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // array of buttons
     let buttons = document.querySelectorAll(".btn");
 
     for (let i = 0; i < buttons.length; i++) {
         // on click buttons
-        buttons[i].addEventListener("click", function() {
+        buttons[i].addEventListener("click", function () {
             // add new item
             let title = document.getElementsByClassName("shop-item-title")[i].innerText;
             let author = document.getElementsByClassName("shop-autor")[i].innerText;
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             createCart();
-            clearCart(element);
+
             console.log(shopping_cart);
         });
     }
@@ -64,7 +64,7 @@ function deleteItem() {
     let new_shopping_cart = [];
     for (let index = 0; index < buttons.length; index++) {
         const button = buttons[index];
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             button.parentNode.remove();
             let list = document.getElementsByClassName("shopping-cart-element");
             for (let i = 0; i < shopping_cart.length; i++) {
@@ -89,15 +89,15 @@ function deleteItem() {
  * @version 1.0
  * @author Roger Puga
  */
-document.getElementsByClassName("shopping-cart")[0].addEventListener("mouseover", function(e) {
+document.getElementsByClassName("shopping-cart")[0].addEventListener("mouseover", function (e) {
     let list = document.querySelectorAll(".shopping-cart-list")[0];
     list.classList.remove("display-none"); // show shopping cart
     document.getElementsByClassName("smoke-screen")[0].classList.remove("display-none");
     deleteItem();
 }, false);
-document.getElementsByClassName("shopping-cart")[0].addEventListener("mouseleave", function(e) {
+document.getElementsByClassName("shopping-cart")[0].addEventListener("mouseleave", function (e) {
     console.log("leave");
-    setTimeout(function() {
+    setTimeout(function () {
         let list = document.querySelectorAll(".shopping-cart-list")[0];
         list.classList.add("display-none"); // close shopping cart
         document.getElementsByClassName("smoke-screen")[0].classList.add("display-none");
@@ -149,6 +149,8 @@ function createCart() {
     }
     document.getElementsByClassName("counter-shopping-cart")[0].innerHTML = "$" + total;
     document.getElementsByClassName("shopping-cart-total-value")[0].innerHTML = "$" + total;
+
+    shoppingCookie();
 }
 
 /**
@@ -156,12 +158,11 @@ function createCart() {
  * @version 1.0
  * @author Albert Casany
  */
-function clearCart(list_elements){
-    //document.getElementsByClassName("shopping-cart-reset");
-    //console.log("Hola yo",list_elements);
-    list_elements.remove()
-    
-}
+document.getElementsByClassName("shopping-cart-reset")[0].addEventListener("click", function (e) {
+
+    shopping_cart = [];
+    createCart();
+}, false);
 
 
 /**
@@ -169,6 +170,14 @@ function clearCart(list_elements){
  * @version 1.0
  * @author Albert Casany
  */
+function shoppingCookie() {
+    
+    for (let i = 0; i < shopping_cart.length; i++) {
+        document.cookie = "nombre=product;max-age=604800";
+        //console.log(co);
+        //const element = d array[index];
+    }
+}
 
 /**
  * @description Function to accept shopping list
