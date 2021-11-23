@@ -8,20 +8,36 @@
 var shopping_cart = [];
 var openTimer = null;
 var closeTimer = null;
-var sens = 50;
+var sens = 100;
+
+
+/**
+ * @description Event read cookie
+ * @version 1.0
+ * @author Roger Puga
+ */
+document.addEventListener("DOMContentLoaded", function() {
+    if (getCookie("list") != "") {
+        shopping_cart = JSON.parse(getCookie("list"));
+        console.log(shopping_cart);
+        createCart();
+    }
+
+});
+
 
 /**
  * @description Event put new item in shopping list
  * @version 1.0
  * @author Albert Casany
  */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     // array of buttons
     let buttons = document.querySelectorAll(".btn");
 
     for (let i = 0; i < buttons.length; i++) {
         // on click buttons
-        buttons[i].addEventListener("click", function () {
+        buttons[i].addEventListener("click", function() {
             // add new item
             let title = document.getElementsByClassName("shop-item-title")[i].innerText;
             let author = document.getElementsByClassName("shop-autor")[i].innerText;
@@ -66,7 +82,7 @@ function deleteItem() {
     let new_shopping_cart = [];
     for (let index = 0; index < buttons.length; index++) {
         const button = buttons[index];
-        button.addEventListener("click", function () {
+        button.addEventListener("click", function() {
             button.parentNode.remove();
             let list = document.getElementsByClassName("shopping-cart-element");
             for (let i = 0; i < shopping_cart.length; i++) {
@@ -175,7 +191,7 @@ function createCart() {
  * @author Albert Casany
  */
 
-document.getElementsByClassName("shopping-cart-reset")[0].addEventListener("click", function (e) {
+document.getElementsByClassName("shopping-cart-reset")[0].addEventListener("click", function(e) {
 
     shopping_cart = [];
     createCart();
@@ -189,12 +205,7 @@ document.getElementsByClassName("shopping-cart-reset")[0].addEventListener("clic
  * @author Albert Casany
  */
 function shoppingCookie() {
-    
-    for (let i = 0; i < shopping_cart.length; i++) {
-        document.cookie = "nombre=product;max-age=604800";
-        //console.log(co);
-        //const element = d array[index];
-    }
+    setCookie("list", JSON.stringify(shopping_cart), 10);
 }
 
 /**
