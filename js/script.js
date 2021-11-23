@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(shopping_cart);
         createCart();
     }
-
 });
 
 
@@ -66,8 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(shopping_cart);
         });
     }
-
-
 });
 
 /**
@@ -77,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 
 function deleteItem() {
-
     let buttons = document.getElementsByClassName("btn-delete-element");
     let new_shopping_cart = [];
     for (let index = 0; index < buttons.length; index++) {
@@ -97,10 +93,7 @@ function deleteItem() {
             createCart();
         });
     }
-
 }
-
-
 
 /**
  * @description Events show shopping list
@@ -215,5 +208,10 @@ function shoppingCookie() {
  */
 
 document.getElementsByClassName("shopping-cart-confirmed")[0].addEventListener("click", function(e) {
+    let new_windows = window.open();
+    new_windows.document.title = "order";
+    new_windows.document.write(
+        "<h1>Order List</h1>"
+    )
 
 });
