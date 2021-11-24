@@ -10,7 +10,6 @@ var openTimer = null;
 var closeTimer = null;
 var sens = 100;
 
-
 /**
  * @description Event read cookie
  * @version 1.0
@@ -209,9 +208,52 @@ function shoppingCookie() {
 
 document.getElementsByClassName("shopping-cart-confirmed")[0].addEventListener("click", function(e) {
     let new_windows = window.open();
-    new_windows.document.title = "order";
-    new_windows.document.write(
-        "<h1>Order List</h1>"
-    )
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    let date = new Date(Date.now()).toLocaleString("es-ES", options);
+    let total = 0;
+    let div = document.createElement("div");
+    div.classList.add("order");
+    div.innerHTML =
+        "<h1>Order List</h1>" +
+        "<p> Date: " + date + "</p>";
+    let list = document.createElement("ul");
+    div.append(list);
 
+
+    for (let i = 0; i < shopping_cart.length; i++) {
+        const item = shopping_cart[i];
+        let list_item = document.createElement("li");
+        list_item.innerHTML = "Curso " + item.title + " de " + item.author + " por $" + item.price + " y una cantidad de " + item.quantity;
+
+        total += parseInt(item.quantity) * parseFloat(item.price);
+        list.append(list_item);
+    }
+    let h3_import = document.createElement("h3");
+    h3_import.innerHTML = "Importe total: $" + total;
+
+    div.append(h3_import);
+
+    let buttons = document.createElement("div");
+    let button_cancel = document.createElement("button");
+    button_cancel.id = "cancel";
+    button_cancel.innerHTML = "Cancelar";
+    buttons.append(button_cancel);
+
+    let button_accept = document.createElement("button");
+    button_accept.id = "accept";
+    button_accept.innerHTML = "Aceptar";
+    buttons.append(button_accept);
+
+    div.append(buttons);
+
+    new_windows.document.body.append(div);
+
+    new_windows.window.document.getElementById("cancel").addEventListener("click", function(e) {
+        new_windows.close();
+    });
+    new_windows.window.document.getElementById("accept").addEventListener("click", function(e) {
+        buttons.style.display = "none";
+        new_windows.print();
+        buttons.style.display = "inline";
+    });
 });
