@@ -254,6 +254,9 @@ document.getElementsByClassName("shopping-cart-confirmed")[0].addEventListener("
     new_windows.window.document.getElementById("accept").addEventListener("click", function(e) {
         buttons.style.display = "none";
         new_windows.print();
-        buttons.style.display = "inline";
+        new_windows.close();
+        shopping_cart = [];
+        createCart();
+        shoppingCookie();
     });
 });
